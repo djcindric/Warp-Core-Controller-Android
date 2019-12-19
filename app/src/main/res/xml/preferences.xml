@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <EditTextPreference
+        android:defaultValue="Warp Core"
+        android:key="network_ssid"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:title="Edit Network SSID"
+        app:allowDividerAbove="true"
+        app:allowDividerBelow="true" />
+    <EditTextPreference
+        android:defaultValue="jasmineislovins"
+        android:key="network_password"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:title="Edit Network Password"
+        app:allowDividerAbove="true"
+        app:allowDividerBelow="true" />
+</PreferenceScreen>
