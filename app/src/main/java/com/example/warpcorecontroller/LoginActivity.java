@@ -1,35 +1,18 @@
 package com.example.warpcorecontroller;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
-import androidx.preference.PreferenceFragmentCompat;
 import androidx.preference.PreferenceManager;
 
-import android.Manifest;
-import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.content.SharedPreferences;
-import android.content.pm.PackageManager;
-import android.net.Uri;
-import android.net.wifi.ScanResult;
-import android.net.wifi.WifiConfiguration;
 import android.net.wifi.WifiManager;
 import android.os.AsyncTask;
-import android.os.Build;
 import android.os.Bundle;
-import android.provider.Settings;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
-
-import org.xml.sax.InputSource;
-import org.xml.sax.XMLReader;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
@@ -37,15 +20,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.Arrays;
-import java.util.List;
 
-import javax.xml.parsers.SAXParser;
-import javax.xml.parsers.SAXParserFactory;
-
-public class MainActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
 
     String ssid = "";
     String password = "";
@@ -55,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_login);
 
         PreferenceManager.setDefaultValues(this, R.xml.preferences, false);
 
@@ -70,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main_activity_menu, menu);
+        getMenuInflater().inflate(R.menu.login_activity_menu, menu);
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -91,7 +68,11 @@ public class MainActivity extends AppCompatActivity {
     public void connectToWarpCore(View view) throws IOException {
         Context context = getApplicationContext();
 
-        new RetrieveFeedTask().execute();
+        //Switch to "main" activity
+        Intent intent = new Intent(this, LightingConfigActivity.class);
+        startActivity(intent);
+
+        //new RetrieveFeedTask().execute();
     }
 
     private class RetrieveFeedTask extends AsyncTask {
@@ -107,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
         HttpURLConnection urlConnection = null;
         try {
             //String apiUrl = "Http:/192.168.4.1/changeSpeed?delay=50";
-            String apiUrl = "Http:/192.168.4.1/changeColor?Red=250&Blue=0&Green=0";
+            String apiUrl = "Http:/192.168.4.1/changeColor?red=0&blue=255&green=255";
             
             URL requestUrl = new URL(apiUrl);
             urlConnection = (HttpURLConnection) requestUrl.openConnection();

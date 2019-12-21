@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/lightingconfig"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.lightingconfig.LightingConfigFragment" >
+
+    <TableLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:stretchColumns="1,2">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp">
+
+            <TextView
+                android:id="@+id/brightnessText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Brightness (0-255)"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/brightnessInput"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="3"
+                android:inputType="number"
+                android:maxLength="3"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/brightnessButton"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Update"
+                android:textAllCaps="false"
+                android:textSize="18sp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp">
+
+            <TextView
+                android:id="@+id/delayText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Delay (in miliseconds)"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/delayInput"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="3"
+                android:inputType="number"
+                android:maxLength="3"
+                android:textSize="18sp" />
+
+            <Button
+                android:id="@+id/delayButton"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Update"
+                android:textAllCaps="false"
+                android:textSize="18sp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp">
+
+            <TextView
+                android:id="@+id/opModeText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Lighting Mode"
+                android:textSize="18sp" />
+
+            <Spinner
+                android:id="@+id/opModeSpinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />\
+
+            <Button
+                android:id="@+id/opModeButton"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Update"
+                android:textAllCaps="false"
+                android:textSize="18sp" />
+        </TableRow>
+    </TableLayout>
+</LinearLayout>
