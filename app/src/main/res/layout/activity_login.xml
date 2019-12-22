@@ -6,6 +6,21 @@
     android:layout_height="match_parent"
     tools:context=".LoginActivity">
 
+    <TextView
+        android:id="@+id/connectionInfoText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button2"
+        android:layout_gravity="center_horizontal"
+        android:text="Make sure mobile data is turned off, \nand Wi-Fi is connected to the Warp Core's \nnetwork before clicking the button below"
+        android:layout_marginBottom="10dp"
+        android:layout_marginHorizontal="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        android:layout_weight="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/button2" />
+
     <Button
         android:id="@+id/button2"
         android:layout_width="wrap_content"

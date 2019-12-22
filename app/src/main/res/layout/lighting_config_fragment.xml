@@ -23,15 +23,17 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Brightness (0-255)"
+                android:layout_weight="2"
+                android:layout_gravity="center_vertical"
                 android:textSize="18sp" />
 
             <EditText
                 android:id="@+id/brightnessInput"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:ems="3"
                 android:inputType="number"
                 android:maxLength="3"
+                android:layout_weight="0.10"
                 android:textSize="18sp" />
 
             <Button
@@ -40,29 +42,35 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Update"
+                android:layout_weight="1"
                 android:textAllCaps="false"
                 android:textSize="18sp" />
         </TableRow>
 
+        <View style="@style/Divider"/>
+
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="10dp">
+            android:layout_margin="10dp"
+            android:gravity="center_vertical">
 
             <TextView
                 android:id="@+id/delayText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Delay (in miliseconds)"
+                android:text="Delay (in ms)"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="2"
                 android:textSize="18sp" />
 
             <EditText
                 android:id="@+id/delayInput"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:ems="3"
                 android:inputType="number"
                 android:maxLength="3"
+                android:layout_weight="1"
                 android:textSize="18sp" />
 
             <Button
@@ -70,26 +78,34 @@
                 android:layout_gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:text="Update"
                 android:textAllCaps="false"
                 android:textSize="18sp" />
         </TableRow>
 
+        <View style="@style/Divider"/>
+
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="10dp">
+            android:layout_margin="10dp"
+            android:gravity="center_vertical">
 
             <TextView
                 android:id="@+id/opModeText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Lighting Mode"
+                android:layout_weight="2"
+                android:layout_gravity="center_vertical"
                 android:textSize="18sp" />
 
             <Spinner
                 android:id="@+id/opModeSpinner"
                 android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
                 android:layout_height="wrap_content" />\
 
             <Button
@@ -98,8 +114,61 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Update"
+                android:layout_weight="1"
                 android:textAllCaps="false"
                 android:textSize="18sp" />
+        </TableRow>
+
+        <View style="@style/Divider"/>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center_horizontal">
+
+            <com.skydoves.colorpickerview.AlphaTileView
+                android:id="@+id/warpColorPreview"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                app:tileEvenColor="@color/cardview_dark_background"
+                app:tileOddColor="@color/cardview_shadow_end_color"
+                app:tileSize="20" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp">
+
+            <TextView
+                android:id="@+id/colorModeText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="Color Selection"
+                android:layout_gravity="center_vertical"
+                android:textSize="18sp" />
+
+            <Spinner
+                android:id="@+id/colorModeSpinner"
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
+                android:layout_height="wrap_content" />\
+
+            <Button
+                android:id="@+id/colorModeButton"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Update"
+                android:layout_weight="1"
+                android:textAllCaps="false"
+                android:textSize="18sp" />
+
         </TableRow>
     </TableLayout>
 </LinearLayout>

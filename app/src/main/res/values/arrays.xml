@@ -7,6 +7,12 @@
         <item>Revolving</item>
         <item>Spiral 1</item>
         <item>Spiral 2</item>
-        <item>Fade</item>
+        <item>Cylon 1</item>
+        <item>Cylon 2</item>
+    </string-array>
+
+    <string-array name="color_mode_values">
+        <item>Primary</item>
+        <item>Secondary</item>
     </string-array>
 </resources>
